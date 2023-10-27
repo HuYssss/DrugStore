@@ -1,0 +1,34 @@
+[
+    {
+        "_id": "CA01",
+        "name": "Thực phẩm chức năng"
+    },   
+    {
+        "_id": "CA02",
+        "name": "Dược mỹ phẩm"
+    },
+    {
+        "_id": "CA03",
+        "name": "Chăm sóc cá nhân"
+    },
+    {
+        "_id": "CA04",
+        "name": "Thuốc"
+    },
+    {
+        "_id": "CA05",
+        "name": "Thiết bị y tế"
+    },
+    {
+        "_id": "CA06",
+        "name": "Tiêm chủng"
+    },
+    {
+        "_id": "CA07",
+        "name": "Bệnh"
+    },
+    {
+        "_id": "CA08",
+        "name": "Blog"
+    }
+]

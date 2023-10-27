@@ -1,0 +1,24 @@
+[
+    {
+        "_id": "US01",
+        "name": "Admin",
+        "address": "VietNam",
+        "phone": "123456",
+        "email": "root@admin.com.vn",
+        "isAdmin": 1,
+        "isUser": 0,
+        "username": "admin",
+        "password": "root"
+    },
+    {
+        "_id": "US02",
+        "name": "User",
+        "address": "TPHCM",
+        "phone": "0909090909",
+        "email": "user@guest.com.vn",
+        "isAdmin": 0,
+        "isUser": 1,
+        "username": "user",
+        "password": "123456"
+    }
+]
