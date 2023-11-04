@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/medicine")
+@RequestMapping("/api/v1/medicine")
 public class medicineController {
     @Autowired
     private medicineService medicineService;

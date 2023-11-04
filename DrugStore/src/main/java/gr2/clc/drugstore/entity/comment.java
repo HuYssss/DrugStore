@@ -7,16 +7,15 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "category")
-public class category {
+@Document(collection = "comment")
+public class comment {
     @Id
     private String id;
-    private String name;
-    private List<categoryEle> categoryEle;
+    private String userId;
+    private String medicineId;
+    private String content;
 }
