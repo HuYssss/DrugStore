@@ -17,6 +17,4 @@ public class orderDetail {
     private String id;
     private String medicineId;
     private int quantity;
-    private double price;
-    private double totalAmount;
 }
