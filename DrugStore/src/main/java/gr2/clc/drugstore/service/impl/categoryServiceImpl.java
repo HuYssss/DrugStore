@@ -1,5 +1,6 @@
 package gr2.clc.drugstore.service.impl;
 
+import gr2.clc.drugstore.service.medicineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import gr2.clc.drugstore.entity.category;
 import gr2.clc.drugstore.repository.categoryRepository;
@@ -13,9 +14,12 @@ public class categoryServiceImpl implements categoryService {
     @Autowired
     private categoryRepository repo;
 
+    @Autowired
+    private medicineService repoMedicine;
+
     @Override
     public Iterable<category> getAll() {
-        return this.repo.findAll();
+        return repo.findAll();
     }
 
     @Override
@@ -25,11 +29,12 @@ public class categoryServiceImpl implements categoryService {
 
     @Override
     public void delete(String id) {
+
         repo.deleteById(id);
     }
 
     @Override
     public Optional<category> findById(String id) {
-        return this.repo.findById(id);
+        return repo.findById(id);
     }
 }
