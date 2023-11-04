@@ -42,3 +42,13 @@
 	- Quantity
 	- Price
 	- Total
+
+7. Blog
+	- ID (B01)
+	- Url
+
+8. Comment
+	- ID (CM01)
+	- MedicineID
+	- UserID
+	- Content
