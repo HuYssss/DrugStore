@@ -13,8 +13,9 @@
 2. Category 
 	- Id (CA01)
 	- CategoryName
+	- CategoryEle (List Object)
 
-3. CategoryElement
+3. CategoryElement (Import -> Category)
 	- Id (CAE01)
 	- IdCate
 	- CateEleName
@@ -34,7 +35,8 @@
 	- CustomerID
 	- OrderDetail (List OrderDetail)
 	- TotalAmount
-6. OrderDetail
+
+6. OrderDetail
 	- ID (OD01)
 	- MedicineID
 	- Quantity

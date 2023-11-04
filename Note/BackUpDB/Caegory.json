@@ -1,23 +1,48 @@
 [
     {
         "_id": "CA01",
-        "name": "Thực phẩm chức năng"
+        "name": "Thực phẩm chức năng",
+        "categoryEle": [
+            { "_id": "CAE01", "name": "Vitamin và khoáng chất" },
+            { "_id": "CAE02", "name": "Sinh lý và nội tiết tố"},
+            { "_id": "CAE03", "name": "Hỗ trợ tiêu hóa"},
+            { "_id": "CAE04", "name": "Hỗ trợ làm đẹp"}
+        ]
     },   
     {
         "_id": "CA02",
-        "name": "Dược mỹ phẩm"
+        "name": "Dược mỹ phẩm",
+        "categoryEle": [
+            { "_id": "CAE05", "name": "Chăm sóc da mặt" },
+            { "_id": "CAE06", "name": "Chăm sóc cơ thể" },
+            { "_id": "CAE07", "name": "Chăm sóc tóc và da đầu"}
+        ]
     },
     {
         "_id": "CA03",
-        "name": "Chăm sóc cá nhân"
+        "name": "Chăm sóc cá nhân",
+        "categoryEle": [
+            { "_id": "CAE08", "name": "Vệ sinh cá nhân" },
+            { "_id": "CAE09", "name": "Chăm sóc răng miệng" }
+        ]
     },
     {
         "_id": "CA04",
-        "name": "Thuốc"
+        "name": "Thuốc",
+        "categoryEle": [
+            { "_id": "CAE10", "name": "Thuốc tây" },
+            { "_id": "CAE11", "name": "Dược chất" },
+            { "_id": "CAE12", "name": "Dược liệu" }
+        ]
     },
     {
         "_id": "CA05",
-        "name": "Thiết bị y tế"
+        "name": "Thiết bị y tế",
+        "categoryEle": [
+            { "_id": "CAE13", "name": "Dụng cụ y tế" },
+            { "_id": "CAE14", "name": "Dụng cụ sơ cứu" },
+            { "_id": "CAE15", "name": "Khẩu trang"}
+        ]
     },
     {
         "_id": "CA06",
