@@ -1,0 +1,10 @@
+Create project chọn maven
+Thêm các dependency: spring web, spring data mongoB, lombook
+
+Connection String:
+	mongodb+srv://huyhl:uKjq5KuSUTUSSmyr@admin.5rtf3cu.mongodb.net/?retryWrites=true&w=majority
+	account: huyhl
+	pass:	 uKjq5KuSUTUSSmyr
+
+Link rút gọn link ảnh:			https://by.com.vn/
+Link lấy data:				https://nhathuoclongchau.com.vn/

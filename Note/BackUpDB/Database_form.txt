@@ -1,0 +1,44 @@
+1. Medicine:
+	- Id (M01)
+	- MedicineName
+	- Category 
+	- CategoryEle
+	- Price
+	- Quantity
+	- Img
+	- Description
+	- Manufacturer
+	- Quantity_sold
+
+2. Category 
+	- Id (CA01)
+	- CategoryName
+	- CategoryEle (List Object)
+
+3. CategoryElement (Import -> Category)
+	- Id (CAE01)
+	- IdCate
+	- CateEleName
+
+4. User:
+	- ID (US01)
+	- FullName
+	- Address
+	- Phone
+	- Email
+	- IsAdmin
+	- IsUser
+
+5. Order:
+	- ID (OR01)
+	- OrderDate
+	- CustomerID
+	- OrderDetail (List OrderDetail)
+	- TotalAmount
+
+6. OrderDetail
+	- ID (OD01)
+	- MedicineID
+	- Quantity
+	- Price
+	- Total
