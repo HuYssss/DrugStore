@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import gr2.clc.drugstore.entity.category;
 import gr2.clc.drugstore.service.categoryService;
+import gr2.clc.drugstore.tool.message;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,19 +28,22 @@ public class categoryController {
     }
 
     @PostMapping("/save")
-    public void save(@RequestBody category category) {
+    public String save(@RequestBody category category) {
         categoryService.saveOrUpdate(category);
+        return message.saveMessage(category.getId());
     }
 
     @PutMapping("/edit/{id}")
-    public void update(@RequestBody category category,
+    public String update(@RequestBody category category,
                         @PathVariable(name = "id")String id) {
         category.setId(id);
         categoryService.saveOrUpdate(category);
+        return message.editMessage(id);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable(name = "id")String id) {
+    public String delete(@PathVariable(name = "id")String id) {
         categoryService.delete(id);
+        return message.deleteMessage(id);
     }
 }

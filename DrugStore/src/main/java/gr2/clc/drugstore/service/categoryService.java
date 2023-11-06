@@ -10,4 +10,5 @@ public interface categoryService {
     public void saveOrUpdate(category category);
     public void delete(String id);
     public Optional<category> findById(String id);
+    public void deleteCategoryEle(String cateId, String cateEleId);
 }
