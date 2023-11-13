@@ -33,12 +33,27 @@
 	- ID (OR01)
 	- OrderDate
 	- CustomerID
-	- OrderDetail (List OrderDetail)
+	- OrderDetail (List Object)
 	- TotalAmount
 
-6. OrderDetail
+6. OrderDetail (Import -> Order)
 	- ID (OD01)
 	- MedicineID
 	- Quantity
 	- Price
 	- Total
+
+7. Blog
+	- ID (B01)
+	- Url
+
+8. Comment
+	- ID (CM01)
+	- MedicineID
+	- UserID
+	- Content
+	
+
+NOTE: 
+	- OrderDetail và CategoryEle chỉ là model trong api không phải collection
+	, dùng để đổ data vào OrderDetail của Order và CategoryEle và Category

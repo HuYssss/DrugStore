@@ -2,6 +2,7 @@ package gr2.clc.drugstore.controller;
 
 import gr2.clc.drugstore.entity.medicine;
 import gr2.clc.drugstore.service.medicineService;
+import gr2.clc.drugstore.tool.message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,19 +28,22 @@ public class medicineController {
     }
 
     @PostMapping("/save")
-    public void save(@RequestBody medicine medicine) {
+    public String save(@RequestBody medicine medicine) {
         medicineService.saveOrUpdate(medicine);
+        return message.saveMessage(medicine.getId());
     }
 
     @PutMapping("/edit/{id}")
-    public void update(@RequestBody medicine medicine,
+    public String update(@RequestBody medicine medicine,
                        @PathVariable(name = "id")String id) {
         medicine.setId(id);
         medicineService.saveOrUpdate(medicine);
+        return message.editMessage(id);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable(name = "id")String id) {
+    public String delete(@PathVariable(name = "id")String id) {
         medicineService.delete(id);
+        return message.deleteMessage(id);
     }
 }

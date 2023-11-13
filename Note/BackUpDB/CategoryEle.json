@@ -1,8 +1,5 @@
 [
     {
-        "NOTE": "NOT USE"
-    },
-    {
         "_id": "CAE01",
         "name": "Vitamin và khoáng chất",
         "category": "CA01"
@@ -16,6 +13,7 @@
         "_id": "CAE03",
         "name": "Hỗ trợ tiêu hóa",
         "category": "CA01"
+        
     },
     {
         "_id": "CAE04",

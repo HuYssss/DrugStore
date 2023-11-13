@@ -8,9 +8,11 @@ import java.util.Optional;
 
 public interface medicineService {
     public Iterable<medicine> getAll();
-    public void saveOrUpdate(medicine medicine);
-    public void delete(String id);
+    public String saveOrUpdate(medicine medicine);
+    public String delete(String id);
     public Optional<medicine> findById(String id);
 
     public Iterable<medicine> getByCateID(String id);
+
+    public Iterable<medicine> getByCateEleID(String id);
 }

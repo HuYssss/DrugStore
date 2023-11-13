@@ -2,10 +2,10 @@ package gr2.clc.drugstore.service;
 
 import gr2.clc.drugstore.entity.comment;
 
-import java.util.Optional;
+import java.util.List;
 
 public interface commentService {
-    public void saveOrUpdate(comment comment);
-    public void delete(String id);
-    public Optional<comment> findCommentByMedicine(String id);
+    public String saveOrUpdate(comment comment);
+    public String delete(String id);
+    public List<comment> findCommentByMedicine(String id);
 }

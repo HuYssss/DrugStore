@@ -16,4 +16,5 @@ public class categoryEle {
     @Id
     private String id;
     private String name;
+    private String category;
 }

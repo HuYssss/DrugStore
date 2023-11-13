@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface userService {
     public Iterable<user> getAll();
-    public void saveOrUpdate(user user);
-    public void delete(String id);
+    public String saveOrUpdate(user user);
+    public String delete(String id);
     public Optional<user> findById(String id);
 }

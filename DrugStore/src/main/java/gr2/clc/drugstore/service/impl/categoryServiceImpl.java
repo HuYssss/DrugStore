@@ -1,8 +1,9 @@
 package gr2.clc.drugstore.service.impl;
 
-import gr2.clc.drugstore.entity.categoryEle;
 import gr2.clc.drugstore.service.categoryEleService;
+import gr2.clc.drugstore.service.idHandleService;
 import gr2.clc.drugstore.service.medicineService;
+import gr2.clc.drugstore.tool.message;
 import org.springframework.beans.factory.annotation.Autowired;
 import gr2.clc.drugstore.entity.category;
 import gr2.clc.drugstore.repository.categoryRepository;
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class categoryServiceImpl implements categoryService {
@@ -18,10 +21,13 @@ public class categoryServiceImpl implements categoryService {
     private categoryRepository repo;
 
     @Autowired
-    private medicineService repoMedicine;
+    private idHandleService idService;
 
     @Autowired
     private categoryEleService repoCateEle;
+
+    @Autowired
+    private medicineService repoMedicine;
 
     @Override
     public Iterable<category> getAll() {
@@ -29,22 +35,60 @@ public class categoryServiceImpl implements categoryService {
     }
 
     @Override
-    public void saveOrUpdate(category category) {
-        repo.save(category);
+    public String saveOrUpdate(category category) {
+        if (category != null)
+        {
+            if (category.getId() == null)
+                category.setId(idService.getNewId("CA00", "category"));
+            repo.save(category);
+            return message.saveMessage(category.getId());
+        }
+        else
+            return message.saveMessageNull();
     }
 
     @Override
-    public void delete(String id) {
-        repo.deleteById(id);
+    public String delete(String id) {
+        if (StringPatternCheck(id))
+        {
+            idService.deleteID("CA00", "category", id);
+            handleDeleteCategory(id);
+            repo.deleteById(id);
+            return message.deleteMessage(id);
+        }
+        else
+            return message.noParamMessage();
     }
 
     @Override
     public Optional<category> findById(String id) {
-        return repo.findById(id);
+        if (StringPatternCheck(id))
+            return repo.findById(id);
+        else
+            return Optional.empty();
     }
 
-    @Override
-    public void deleteCategoryEle(String cateId, String cateEleId) {
+    private static boolean StringPatternCheck(String input) {
+        String regexPattern = "^CA\\d+$";
 
+        Pattern pattern = Pattern.compile(regexPattern);
+
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.matches();
+    }
+
+    private void handleDeleteCategory(String id) {
+        repo.findById(id).ifPresent(result -> {
+            List<String> tmp = result.getCateEle();
+            for (String str : tmp) {
+                repoCateEle.delete(str);
+            }
+        });
+
+        repoMedicine.getByCateID(id).forEach(s -> {
+            s.setCategory("CA09");
+            repoMedicine.saveOrUpdate(s);
+        });
     }
 }

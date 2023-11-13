@@ -1,0 +1,9 @@
+[
+  {
+    "_id": "OR01",
+    "orderDate": "17/10/2023",
+    "customerId": "US01",
+    "orderDetail": [ "OD01", "OD02" ],
+    "totalAmount": null
+  }
+]

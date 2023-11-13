@@ -19,6 +19,6 @@ public class order {
     private String id;
     private String orderDate;
     private String customerId;
-    private List<orderDetail> orderDetail;
+    private List<String> orderDetail;
     private double totalAmount;
 }

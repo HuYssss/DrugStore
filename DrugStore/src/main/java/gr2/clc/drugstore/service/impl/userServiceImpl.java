@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class userServiceImpl implements userService {
@@ -19,17 +21,29 @@ public class userServiceImpl implements userService {
     }
 
     @Override
-    public void saveOrUpdate(user user) {
+    public String saveOrUpdate(user user) {
         repo.save(user);
+        return null;
     }
 
     @Override
-    public void delete(String id) {
+    public String delete(String id) {
         repo.deleteById(id);
+        return null;
     }
 
     @Override
     public Optional<user> findById(String id) {
         return this.repo.findById(id);
+    }
+
+    private static boolean StringPatternCheck(String input) {
+        String regexPattern = "^US\\d+$";
+
+        Pattern pattern = Pattern.compile(regexPattern);
+
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.matches();
     }
 }

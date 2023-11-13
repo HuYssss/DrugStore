@@ -1,0 +1,39 @@
+[
+    {
+        "_id": "CA01",
+        "name": "Thực phẩm chức năng",
+        "cateEle": ["CAE01", "CAE02", "CAE03", "CAE04"]
+    },   
+    {
+        "_id": "CA02",
+        "name": "Dược mỹ phẩm",
+        "cateEle": ["CAE05", "CAE06", "CAE07"]
+    },
+    {
+        "_id": "CA03",
+        "name": "Chăm sóc cá nhân",
+        "cateEle": ["CAE08", "CAE09"]        
+    },
+    {
+        "_id": "CA04",
+        "name": "Thuốc",
+        "cateEle": ["CAE10", "CAE11", "CAE12"]
+    },
+    {
+        "_id": "CA05",
+        "name": "Thiết bị y tế",
+        "cateEle": ["CAE13", "CAE14", "CAE15"]
+    },
+    {
+        "_id": "CA06",
+        "name": "Tiêm chủng"
+    },
+    {
+        "_id": "CA07",
+        "name": "Bệnh"
+    },
+    {
+        "_id": "CA08",
+        "name": "Blog"
+    }
+]

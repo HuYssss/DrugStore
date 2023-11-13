@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface orderDetailService {
     public Iterable<orderDetail> getAll();
-    public void saveOrUpdate(orderDetail orderDetail);
-    public void delete(String id);
+    public String saveOrUpdate(orderDetail orderDetail);
+    public String delete(String id);
     public Optional<orderDetail> findById(String id);
 }

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface categoryEleService {
     public Iterable<categoryEle> getAll();
-    public void saveOrUpdate(categoryEle categoryEle);
-    public void delete(String id);
+    public String saveOrUpdate(categoryEle categoryEle);
+    public String delete(String id);
     public Optional<categoryEle> findById(String id);
 }

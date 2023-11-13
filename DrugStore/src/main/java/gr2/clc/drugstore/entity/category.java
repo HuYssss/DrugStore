@@ -1,5 +1,7 @@
 package gr2.clc.drugstore.entity;
 
+import gr2.clc.drugstore.service.idHandleService;
+import gr2.clc.drugstore.service.impl.idHandleServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,12 +13,12 @@ import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Document(collection = "category")
 public class category {
     @Id
     private String id;
     private String name;
-    private List<categoryEle> categoryEle;
+    private List<String> cateEle;
 }
