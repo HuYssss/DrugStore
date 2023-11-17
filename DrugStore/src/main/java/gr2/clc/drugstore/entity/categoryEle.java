@@ -11,10 +11,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "categoryEle")
+@Document
 public class categoryEle {
     @Id
     private String id;
     private String name;
-    private String category;
 }

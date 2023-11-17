@@ -1,4 +1,4 @@
-package gr2.clc.drugstore.tool;
+package gr2.clc.drugstore.helper;
 
 public class message {
 
@@ -33,4 +33,6 @@ public class message {
     public static String editMessageNull() { return "Edit failed because id object null !!!"; }
 
     public static String noParamMessage() { return "Id object invalid !!!"; }
+
+    public static String noLogin() { return "You must be logged in to access this resource"; }
 }

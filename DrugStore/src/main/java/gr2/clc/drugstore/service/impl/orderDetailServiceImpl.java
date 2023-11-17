@@ -1,7 +1,7 @@
 package gr2.clc.drugstore.service.impl;
 
 import gr2.clc.drugstore.service.idHandleService;
-import gr2.clc.drugstore.tool.message;
+import gr2.clc.drugstore.helper.message;
 import org.springframework.beans.factory.annotation.Autowired;
 import gr2.clc.drugstore.entity.orderDetail;
 import gr2.clc.drugstore.repository.orderDetailRepository;

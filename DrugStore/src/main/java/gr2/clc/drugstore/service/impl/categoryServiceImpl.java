@@ -1,16 +1,14 @@
 package gr2.clc.drugstore.service.impl;
 
-import gr2.clc.drugstore.service.categoryEleService;
 import gr2.clc.drugstore.service.idHandleService;
 import gr2.clc.drugstore.service.medicineService;
-import gr2.clc.drugstore.tool.message;
+import gr2.clc.drugstore.helper.message;
 import org.springframework.beans.factory.annotation.Autowired;
 import gr2.clc.drugstore.entity.category;
 import gr2.clc.drugstore.repository.categoryRepository;
 import gr2.clc.drugstore.service.categoryService;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -22,9 +20,6 @@ public class categoryServiceImpl implements categoryService {
 
     @Autowired
     private idHandleService idService;
-
-    @Autowired
-    private categoryEleService repoCateEle;
 
     @Autowired
     private medicineService repoMedicine;
@@ -68,6 +63,7 @@ public class categoryServiceImpl implements categoryService {
             return Optional.empty();
     }
 
+
     private static boolean StringPatternCheck(String input) {
         String regexPattern = "^CA\\d+$";
 
@@ -79,15 +75,9 @@ public class categoryServiceImpl implements categoryService {
     }
 
     private void handleDeleteCategory(String id) {
-        repo.findById(id).ifPresent(result -> {
-            List<String> tmp = result.getCateEle();
-            for (String str : tmp) {
-                repoCateEle.delete(str);
-            }
-        });
-
         repoMedicine.getByCateID(id).forEach(s -> {
             s.setCategory("CA09");
+            s.setCategoryEle("null");
             repoMedicine.saveOrUpdate(s);
         });
     }

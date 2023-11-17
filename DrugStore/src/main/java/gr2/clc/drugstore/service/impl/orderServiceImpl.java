@@ -1,13 +1,15 @@
 package gr2.clc.drugstore.service.impl;
 
+import gr2.clc.drugstore.entity.orderDetail;
 import gr2.clc.drugstore.service.idHandleService;
-import gr2.clc.drugstore.tool.message;
+import gr2.clc.drugstore.helper.message;
 import org.springframework.beans.factory.annotation.Autowired;
 import gr2.clc.drugstore.entity.order;
 import gr2.clc.drugstore.repository.orderRepository;
 import gr2.clc.drugstore.service.orderService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -55,6 +57,15 @@ public class orderServiceImpl implements orderService {
             return repo.findById(id);
         else
             return Optional.empty();
+    }
+
+    @Override
+    public Iterable<orderDetail> findAllOrderDetail(String id) {
+        Optional<order> tmp = repo.findById(id);
+        if (tmp.isPresent())
+            return tmp.get().getOrderDetail();
+        else
+            return null;
     }
 
     private static boolean StringPatternCheck(String input) {

@@ -1,7 +1,7 @@
 package gr2.clc.drugstore.service.impl;
 
 import gr2.clc.drugstore.service.idHandleService;
-import gr2.clc.drugstore.tool.message;
+import gr2.clc.drugstore.helper.message;
 import org.springframework.beans.factory.annotation.Autowired;
 import gr2.clc.drugstore.entity.medicine;
 import gr2.clc.drugstore.repository.medicineRepository;
@@ -72,11 +72,11 @@ public class medicineServiceImpl implements medicineService {
     }
 
     @Override
-    public Iterable<medicine> getByCateEleID(String id) {
+    public Iterable<medicine> getByCateEle(String cateEle) {
         List<medicine> list = repo.findAll();
         List<medicine> result = new ArrayList<>();
         for (medicine m : list) {
-            if (m.getCategoryEle().equals(id))
+            if (m.getCategoryEle().equals(cateEle))
                 result.add(m);
         }
         return result;

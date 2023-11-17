@@ -4,7 +4,7 @@ import gr2.clc.drugstore.entity.comment;
 import gr2.clc.drugstore.repository.commentRepository;
 import gr2.clc.drugstore.service.commentService;
 import gr2.clc.drugstore.service.idHandleService;
-import gr2.clc.drugstore.tool.message;
+import gr2.clc.drugstore.helper.message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

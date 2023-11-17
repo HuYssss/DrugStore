@@ -2,7 +2,7 @@ package gr2.clc.drugstore.controller;
 
 import gr2.clc.drugstore.entity.orderDetail;
 import gr2.clc.drugstore.service.orderDetailService;
-import gr2.clc.drugstore.tool.message;
+import gr2.clc.drugstore.helper.message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
