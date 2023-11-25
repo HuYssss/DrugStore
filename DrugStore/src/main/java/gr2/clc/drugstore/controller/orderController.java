@@ -71,6 +71,6 @@ public class orderController {
 
     private static boolean checkValidUser(HttpServletRequest request) {
         Cookie cookie = WebUtils.getCookie(request, "userCookie");
-        return cookie != null && "authenticated".equals(cookie.getValue());
+        return cookie != null;
     }
 }

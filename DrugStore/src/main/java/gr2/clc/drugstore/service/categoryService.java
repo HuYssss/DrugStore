@@ -1,7 +1,6 @@
 package gr2.clc.drugstore.service;
 
 import gr2.clc.drugstore.entity.category;
-import gr2.clc.drugstore.entity.categoryEle;
 
 import java.util.Optional;
 

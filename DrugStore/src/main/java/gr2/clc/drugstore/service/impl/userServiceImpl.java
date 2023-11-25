@@ -1,13 +1,12 @@
 package gr2.clc.drugstore.service.impl;
 
-import gr2.clc.drugstore.dto.authLoginDTO;
+import gr2.clc.drugstore.dto.authRequestDTO;
 import gr2.clc.drugstore.entity.user;
 import gr2.clc.drugstore.repository.userRepository;
 import gr2.clc.drugstore.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -40,7 +39,7 @@ public class userServiceImpl implements userService {
     }
 
     @Override
-    public Optional<user> findByAccount(authLoginDTO authUser) {
+    public Optional<user> findByAccount(authRequestDTO authUser) {
         return repo.findByUsernameAndPassword(authUser.getUsername(), authUser.getPassword());
     }
 

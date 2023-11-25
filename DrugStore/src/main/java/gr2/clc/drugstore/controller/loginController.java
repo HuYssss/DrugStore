@@ -1,6 +1,7 @@
 package gr2.clc.drugstore.controller;
 
-import gr2.clc.drugstore.dto.authLoginDTO;
+import gr2.clc.drugstore.dto.authRequestDTO;
+import gr2.clc.drugstore.entity.user;
 import gr2.clc.drugstore.service.userService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,11 +12,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/auth")
-public class authController {
+public class loginController {
     @Autowired
     private userService userService;
     @PostMapping("/login")
-    public String login(@RequestBody authLoginDTO authUser,
+    public String login(@RequestBody authRequestDTO authUser,
                         HttpServletRequest request,
                         HttpServletResponse response) {
 
@@ -23,8 +24,9 @@ public class authController {
             HttpSession session = request.getSession();
             session.setAttribute("username", authUser.getUsername());
 
-            Cookie cookie = new Cookie("userCookie", "authenticated");
-            cookie.setMaxAge(60 * 30);
+            Cookie cookie = new Cookie("userCookie", authUser.getUsername());
+            cookie.setPath("/");
+            cookie.setMaxAge(-1);
             response.addCookie(cookie);
 
             return "Login successful";
@@ -43,5 +45,26 @@ public class authController {
         } else {
             return "Not logged in";
         }
+    }
+
+    @PostMapping("/register")
+    public String register(@RequestBody user user) {
+        userService.saveOrUpdate(user);
+        return "Registration successful";
+    }
+
+    @PostMapping("/logout")
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+
+        Cookie cookie = new Cookie("userCookie", null);
+        cookie.setPath("/");
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+
+        return "Logout successful";
     }
 }

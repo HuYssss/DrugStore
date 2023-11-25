@@ -13,6 +13,5 @@ public interface medicineService {
     public Optional<medicine> findById(String id);
 
     public Iterable<medicine> getByCateID(String id);
-
-    public Iterable<medicine> getByCateEle(String cateEle);
+    public Iterable<medicine> getByName(String name);
 }

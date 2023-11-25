@@ -8,5 +8,4 @@ import java.util.Optional;
 
 @Repository
 public interface medicineRepository extends MongoRepository<medicine, String> {
-    Optional<medicine> getByName(String name);
 }

@@ -21,14 +21,8 @@ public class medicineController {
 
     @GetMapping("")
     public ResponseEntity<?> getAll(HttpServletRequest request) {
-        if (checkValidUser(request))
-        {
-            List<medicine> list = (List<medicine>) medicineService.getAll();
-            return ResponseEntity.ok(list);
-        }
-        else
-            return null;
-
+        List<medicine> list = (List<medicine>) medicineService.getAll();
+        return ResponseEntity.ok(list);
     }
 
     @GetMapping("/{id}")
@@ -79,8 +73,17 @@ public class medicineController {
             return message.noLogin();
     }
 
+    @GetMapping("/find/{name}")
+    public Iterable<medicine> getByName(@PathVariable(name = "name") String name,
+                                        HttpServletRequest request) {
+        if (checkValidUser(request))
+            return medicineService.getByName(name);
+        else
+            return null;
+    }
+
     private static boolean checkValidUser(HttpServletRequest request) {
         Cookie cookie = WebUtils.getCookie(request, "userCookie");
-        return cookie != null && "authenticated".equals(cookie.getValue());
+        return cookie != null;
     }
 }

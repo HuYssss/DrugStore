@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @Service
 public class medicineServiceImpl implements medicineService {
@@ -62,22 +63,19 @@ public class medicineServiceImpl implements medicineService {
 
     @Override
     public Iterable<medicine> getByCateID(String id) {
-        List<medicine> list = repo.findAll();
-        List<medicine> result = new ArrayList<>();
-        for (medicine m : list) {
-            if (m.getCategory().equals(id))
-                result.add(m);
-        }
-        return result;
+        return repo.findAll().stream()
+                .filter(m -> m.getCategory().equals(id))
+                .collect(Collectors.toList());
     }
 
     @Override
-    public Iterable<medicine> getByCateEle(String cateEle) {
-        List<medicine> list = repo.findAll();
+    public Iterable<medicine> getByName(String name) {
         List<medicine> result = new ArrayList<>();
-        for (medicine m : list) {
-            if (m.getCategoryEle().equals(cateEle))
-                result.add(m);
+        List<medicine> list = repo.findAll();
+        for (medicine s : list) {
+            if (s.getName().equals(name)) {
+                result.add(s);
+            }
         }
         return result;
     }

@@ -1,64 +1,31 @@
 [
     {
         "_id": "CA00",
-        "maxId": "CA09",
-        "cateEle": null
+        "maxId": "CA06",
+        "unusedId": null
     },
     {
         "_id": "CA01",
-        "name": "Thực phẩm chức năng",
-        "cateEle": [
-            "Vitamin và khoáng chất", 
-            "Sinh lý và nội tiết tố", 
-            "Hỗ trợ tiêu hóa", 
-            "Hỗ trợ làm đẹp" 
-        ]
+        "name": "Thực phẩm chức năng"
     },   
     {
         "_id": "CA02",
-        "name": "Dược mỹ phẩm",
-        "cateEle": [
-            "Chăm sóc da mặt", 
-            "Chăm sóc cơ thể", 
-            "Chăm sóc tóc và da đầu"
-        ]
+        "name": "Dược mỹ phẩm"
     },
     {
         "_id": "CA03",
-        "name": "Chăm sóc cá nhân",
-        "cateEle": [ 
-            "Vệ sinh cá nhân", 
-            "Chăm sóc răng miệng"
-        ]        
+        "name": "Chăm sóc cá nhân"
     },
     {
         "_id": "CA04",
-        "name": "Thuốc",
-        "cateEle": [
-            "Thuốc tây",
-            "Dược chất",
-            "Dược liệu"
-        ]
+        "name": "Thuốc"
     },
     {
         "_id": "CA05",
-        "name": "Thiết bị y tế",
-        "cateEle": [
-            "Dụng cụ y tế",
-            "Dụng cụ sơ cứu",
-            "Khẩu trang"
-        ]
+        "name": "Thiết bị y tế"
     },
     {
         "_id": "CA06",
         "name": "Tiêm chủng"
-    },
-    {
-        "_id": "CA07",
-        "name": "Bệnh"
-    },
-    {
-        "_id": "CA08",
-        "name": "Blog"
     }
 ]

@@ -17,11 +17,8 @@ public class medicine {
     private String id;
     private String name;
     private String category;
-    private String categoryEle;
     private double price;
     private String img;
-    private int quantity;
     private String description;
     private String manufacturer;
-    private int sold;
 }

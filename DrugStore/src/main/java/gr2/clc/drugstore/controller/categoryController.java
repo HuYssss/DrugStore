@@ -21,13 +21,17 @@ public class categoryController {
 
     @GetMapping("")
     public ResponseEntity<?> getAll(HttpServletRequest request) {
-        if (checkValidUser(request))
-        {
+        Cookie cookie = WebUtils.getCookie(request, "userCookie");
+
+        if (cookie != null) {
             List<category> list = (List<category>) categoryService.getAll();
-            return ResponseEntity.ok(list);
+            if (list != null) {
+                return ResponseEntity.ok(list);
+            } else {
+                return ResponseEntity.notFound().build();
+            }
         }
-        else
-            return null;
+        return ResponseEntity.status(401).body(message.noLogin());
     }
 
     @GetMapping("/{id}")
@@ -76,6 +80,6 @@ public class categoryController {
 
     private static boolean checkValidUser(HttpServletRequest request) {
         Cookie cookie = WebUtils.getCookie(request, "userCookie");
-        return cookie != null && "authenticated".equals(cookie.getValue());
+        return cookie != null;
     }
 }

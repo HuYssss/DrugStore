@@ -77,7 +77,6 @@ public class categoryServiceImpl implements categoryService {
     private void handleDeleteCategory(String id) {
         repoMedicine.getByCateID(id).forEach(s -> {
             s.setCategory("CA09");
-            s.setCategoryEle("null");
             repoMedicine.saveOrUpdate(s);
         });
     }
