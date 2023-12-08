@@ -1,0 +1,56 @@
+1. address
+	id			String
+	addresss		String
+	city			String
+	country			String
+	userid			id reference User
+
+2. cart
+	id			String
+	user			id reference User
+	cardLineItems		List<cartLineItem>
+
+3. CartLineItem
+	id			String
+	cart			id reference cart
+	quantity		int
+	isDelete		boolean
+
+4. Category
+	id			String
+	categoryName		String
+	products		List<product>
+
+5. Order
+	id			String
+	orderDate		Date
+	deliveryDate		Date
+	totalPrice		Double
+	status			String
+	receiverName		String
+	user			Object User
+
+6. Product
+	id			String
+	name			String
+	description		String
+	category		Object<Category>
+	variantProducts		List<variantProducts>
+
+7. Role
+	id			String
+	roleName		String
+	user			Set<role> không hiện trên database
+8. user
+	id			String
+	email			String
+	phone			String
+	user			String
+	password		String
+	isDelete		boolean
+	role			Set<role>
+	cart			cartObject
+	Address			List<Address>
+	order			List<Order>
+
+9. VariantProduct (not use)
