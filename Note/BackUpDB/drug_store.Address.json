@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "65733f570296ea479a6e8ee9"
+  },
+  "address": "171/8 Le Van Viet",
+  "city": "Ho Chi Minh City",
+  "country": "Updated",
+  "user": {
+    "$oid": "6572f4260cca4d6217673e39"
+  },
+  "_class": "clc.gr2.drugstore.entity.Address"
+}]

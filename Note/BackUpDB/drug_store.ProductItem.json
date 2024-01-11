@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "657350db14f0c45ca8ff052b"
+  },
+  "productId": {
+    "$oid": "6573462346f34f5b444475e3"
+  },
+  "quantity": 1,
+  "_class": "clc.gr2.drugstore.entity.ProductItem"
+}]

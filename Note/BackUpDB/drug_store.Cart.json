@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "6573425bf191d05a65ef9665"
+  },
+  "productItems": [
+    {
+      "$oid": "657350db14f0c45ca8ff052b"
+    }
+  ],
+  "userId": {
+    "$oid": "65734259f191d05a65ef9664"
+  },
+  "_class": "clc.gr2.drugstore.entity.Cart"
+},
+{
+  "_id": {
+    "$oid": "6577f089cde74f07eebe844f"
+  },
+  "userId": {
+    "$oid": "6577f087cde74f07eebe844e"
+  },
+  "_class": "clc.gr2.drugstore.entity.Cart"
+},
+{
+  "_id": {
+    "$oid": "6579cd7b0ec9a046053e1bcf"
+  },
+  "userId": {
+    "$oid": "6579cd790ec9a046053e1bce"
+  },
+  "_class": "clc.gr2.drugstore.entity.Cart",
+  "productItems": []
+}]

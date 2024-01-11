@@ -1,0 +1,58 @@
+[{
+  "_id": {
+    "$oid": "6573469f46f34f5b44447601"
+  },
+  "products": [
+    {
+      "$oid": "6573462346f34f5b444475e3"
+    }
+  ],
+  "_class": "clc.gr2.drugstore.entity.Category"
+},
+{
+  "_id": {
+    "$oid": "6573469f46f34f5b44447603"
+  },
+  "name": "Chăm sóc cá nhân",
+  "products": []
+},
+{
+  "_id": {
+    "$oid": "6573469f46f34f5b44447606"
+  },
+  "name": "Tiêm chủng",
+  "products": []
+},
+{
+  "_id": {
+    "$oid": "6573469f46f34f5b44447602"
+  },
+  "name": "Dược mỹ phẩm",
+  "products": []
+},
+{
+  "_id": {
+    "$oid": "6573469f46f34f5b44447605"
+  },
+  "name": "Thiết bị y tế",
+  "products": []
+},
+{
+  "_id": {
+    "$oid": "6573469f46f34f5b44447604"
+  },
+  "name": "Thuốc",
+  "products": []
+},
+{
+  "_id": {
+    "$oid": "6573486d7b4d253f75b93f52"
+  },
+  "categoryName": "updated name",
+  "products": [
+    {
+      "$oid": "6573469f46f34f5b44447604"
+    }
+  ],
+  "_class": "clc.gr2.drugstore.entity.Category"
+}]

@@ -1,58 +1,56 @@
-1. Medicine:
-	- Id (M01)
-	- MedicineName
-	- Category 
-	- CategoryEle
-	- Price
-	- Quantity
-	- Img
-	- Description
-	- Manufacturer
-	- Quantity_sold
+1. address
+	id			String
+	addresss		String
+	city			String
+	country			String
+	userid			id reference User
 
-2. Category 
-	- Id (CA01)
-	- CategoryName
-	- CategoryEle (List Object)
+2. cart
+	id			String
+	user			id reference User
+	cardLineItems		List<cartLineItem>
 
-3. CategoryElement (Import -> Category)
-	- Id (CAE01)
-	- IdCate
-	- CateEleName
+3. CartLineItem
+	id			String
+	cart			id reference cart
+	quantity		int
+	isDelete		boolean
 
-4. User:
-	- ID (US01)
-	- FullName
-	- Address
-	- Phone
-	- Email
-	- IsAdmin
-	- IsUser
+4. Category
+	id			String
+	categoryName		String
+	products		List<product>
 
-5. Order:
-	- ID (OR01)
-	- OrderDate
-	- CustomerID
-	- OrderDetail (List Object)
-	- TotalAmount
+5. Order
+	id			String
+	orderDate		Date
+	deliveryDate		Date
+	totalPrice		Double
+	status			String
+	receiverName		String
+	user			Object User
 
-6. OrderDetail (Import -> Order)
-	- ID (OD01)
-	- MedicineID
-	- Quantity
-	- Price
-	- Total
+6. Product
+	id			String
+	name			String
+	description		String
+	category		Object<Category>
+	variantProducts		List<variantProducts>
 
-7. Blog
-	- ID (B01)
-	- Url
+7. Role
+	id			String
+	roleName		String
+	user			Set<role> không hiện trên database
+8. user
+	id			String
+	email			String
+	phone			String
+	user			String
+	password		String
+	isDelete		boolean
+	role			Set<role>
+	cart			cartObject
+	Address			List<Address>
+	order			List<Order>
 
-8. Comment
-	- ID (CM01)
-	- MedicineID
-	- UserID
-	- Content
-
-NOTE: 
-	- OrderDetail và CategoryEle chỉ là model trong api không phải collection
-	, dùng để đổ data vào OrderDetail của Order và CategoryEle và Category
+9. VariantProduct (not use)
